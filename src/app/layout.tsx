@@ -27,13 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // Add suppressHydrationWarning here to mitigate extension-related hydration errors
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased`,
           'flex min-h-screen flex-col'
         )}
-        suppressHydrationWarning // Add suppressHydrationWarning here
+        // Add suppressHydrationWarning here as well
+        suppressHydrationWarning
       >
         <AuthProvider>
           <main className="flex-grow">{children}</main>
