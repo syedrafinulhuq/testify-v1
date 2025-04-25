@@ -27,12 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased`,
           'flex min-h-screen flex-col'
         )}
+        suppressHydrationWarning // Add suppressHydrationWarning here
       >
         <AuthProvider>
           <main className="flex-grow">{children}</main>
