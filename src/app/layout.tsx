@@ -27,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Add suppressHydrationWarning here to mitigate extension-related hydration errors
+    // Add suppressHydrationWarning to html to mitigate general hydration errors
     <html lang="en" suppressHydrationWarning>
+      {/* Add suppressHydrationWarning to body specifically for extension-related attribute mismatches */}
       <body
+        suppressHydrationWarning
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased`,
           'flex min-h-screen flex-col'
