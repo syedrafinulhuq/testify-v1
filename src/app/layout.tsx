@@ -34,7 +34,6 @@ export default function RootLayout({
           `${geistSans.variable} ${geistMono.variable} antialiased`,
           'flex min-h-screen flex-col'
         )}
-        // suppressHydrationWarning removed from here as it's on <html>
       >
         <AuthProvider>
           <main className="flex-grow">{children}</main>
